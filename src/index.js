@@ -6,8 +6,24 @@ import { AppContainer } from 'react-hot-loader'
 import { Provider } from 'react-redux'
 import App from './app'
 import configureStore from './redux-flow/configure-store'
+import { db } from './config/firebase'
 
 const store = configureStore()
+
+const videos = db.ref('videos')
+
+const anyVideo = videos.child("s7QgxoVqNvE")
+
+videos.child('123').set({
+  id: '123',
+  title: 'Javascript Secrets'
+})
+
+videos.on('value', (snapshot) => {
+  console.log('snapshot', snapshot.val())
+}, (error) => {
+  console.log('error', error)
+})
 
 const renderApp = (NextApp) => {
   render(
