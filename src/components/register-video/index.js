@@ -11,21 +11,37 @@ const RegisterVideo = ({ onSubmit }) => (
         <input type='text' id='id' name='id' />
 
         <input type='text' id='title' name='title' />
-
         <label htmlFor='title'>Título do vídeo:</label>
+
         <button type='submit'>Cadastrar</button>
+
+        <ButtonClose type='button'>&times;</ButtonClose>
     </Form>
 )
 
 const Form = styled.form`
-    padding: 10px 
+    padding: 10px; 
+    position: relative;
+`
+
+const ButtonClose = styled.button`
+    border-radius: 50%;
+    font-size: 20px;
+    height: 30px;
+    line-height: 1;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    width: 30px;
 `
 
 const mapDispatchToProps = (dispatch) => ({
     onSubmit: async (e) => {
         e.preventDefault()
+        
         e.persist()
-
         const {
             id: { value: id },
             title: { value: title }

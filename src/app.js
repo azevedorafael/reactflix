@@ -12,7 +12,10 @@ import 'milligram'
 const App = () => (
 	<Container>
 		<Header>
-			<h1>ReactFlix</h1>
+			<HeaderTitle>ReactFlix</HeaderTitle>
+			<RegisterButton>
+				Cadastrar Video
+			</RegisterButton>
 		</Header>
 
 		<Main>
@@ -28,28 +31,38 @@ const App = () => (
 )
 
 injectGlobal`
-   html, body, div[data-js="app"]{
+	html, body, div[data-js="app"]{
 				height: 100%;
 		}
- `
+`
 
 const headerHeight = '60px'
 const footerHeight = '30px'
 
 const Container = styled.div`
-	 height: 100%;
- `
+	height: 100%;
+`
 const Header = styled.header`
-  height: ${headerHeight};
-			background: #333;
-			`
-
+	align-items: center;
+	background: #333;
+	display: flex;
+	height: ${headerHeight};
+	justify-content: space-between;
+	padding: 0 10px;
+`
+const HeaderTitle = styled.h1`
+	color: #fff;		
+	margin-bottom: 0;
+`
+const RegisterButton = styled.button`
+		margin-bottom: 0;
+`
 const Main = styled.main`
 	min-height: calc(100% - ${headerHeight} - ${footerHeight});
 		`
 
 const Footer = styled.footer`
-  height: ${footerHeight};
+	height: ${footerHeight};
 			background: #333;
 		`
 
