@@ -28,7 +28,7 @@ const ButtonClose = styled.button`
     border-radius: 50%;
     font-size: 20px;
     height: 30px;
-    line-height: 1;
+    line-height: 1px;
     margin: 0;
     padding: 0;
     position: absolute;
